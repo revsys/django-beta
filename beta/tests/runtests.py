@@ -6,7 +6,7 @@ from django.conf import settings
 
 if not settings.configured:
     settings.configure(
-        DATABASE_ENGINE='sqlite3',
+        DATABASE_ENGINE='django.db.backends.sqlite3',
         INSTALLED_APPS=[
             'beta',
             'beta.tests',
