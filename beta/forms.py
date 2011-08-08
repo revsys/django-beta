@@ -25,4 +25,4 @@ class BetaSignupForm(forms.ModelForm):
 
     class Meta:
         model = BetaSignup 
-        exclude = ('contacted', 'registered')
+        exclude = ('contacted', 'registered', 'created')

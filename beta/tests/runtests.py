@@ -8,9 +8,12 @@ if not settings.configured:
     settings.configure(
         DATABASE_ENGINE='django.db.backends.sqlite3',
         INSTALLED_APPS=[
+            'django.contrib.auth',
+            'django.contrib.contenttypes',
             'beta',
             'beta.tests',
-        ]
+        ],
+        ROOT_URLCONF='beta.urls',
     )
 
 from django.test.simple import run_tests

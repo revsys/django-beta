@@ -1,3 +1,5 @@
+import datetime 
+
 from django.db import models 
 from django.utils.translation import ugettext_lazy as _
 
@@ -11,6 +13,8 @@ class BetaSignup(models.Model):
 
     contacted = models.BooleanField(_('Contacted'), default=False) 
     registered = models.BooleanField(_('Registered'), default=False) 
+
+    created = models.DateTimeField(_('Created'), default=datetime.datetime.now)
 
     class Meta: 
         verbose_name = _('Beta Signup')

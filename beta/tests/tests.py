@@ -1,4 +1,6 @@
 from django.conf import settings
+from django.core.urlresolvers import reverse
+from django.contrib.auth.models import User
 from django.test import TestCase
 from django.db import IntegrityError
 
@@ -43,6 +45,7 @@ class BetaFormFirstTests(TestCase):
         settings.BETA_CAPTURE_FIRST = False 
 
 class BetaFormBoth(TestCase):
+
     def setUp(self):
         settings.BETA_CAPTURE_BOTH = True 
 
@@ -63,5 +66,24 @@ class BetaFormBoth(TestCase):
         settings.BETA_CAPTURE_BOTH = False 
 
 class BetaViewTests(TestCase):
-    pass 
 
+    def test_view_creation(self):
+        response = self.client.get(reverse('beta_signup'))
+        self.assertEqual(response.status_code, 200) 
+
+        data = {'email': 'foo@bar.com'}
+        response = self.client.post(reverse('beta_signup'), data)
+        self.assertRedirects(response, reverse('beta_confirmation'))
+
+        self.assertEqual(BetaSignup.objects.all().count(), 1)
+        foo = BetaSignup.objects.get(email='foo@bar.com')
+        self.assertTrue(foo)
+
+
+class BetaListenerTest(TestCase):
+
+    def test_listener(self):
+        b = BetaSignup.objects.create(email='foo12@bar.com')
+        u = User.objects.create_user('foo12', 'foo12@bar.com', 'testpass')
+        b2 = BetaSignup.objects.get(email='foo12@bar.com')
+        self.assertTrue(b2.registered)
