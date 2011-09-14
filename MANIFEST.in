@@ -1,0 +1,3 @@
+include *.txt 
+include beta/templates/beta/signup.html
+include beta/templates/beta/confirmation.html

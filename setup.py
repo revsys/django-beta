@@ -1,8 +1,6 @@
 import os
+
 from setuptools import setup, find_packages
-
-from beta import VERSION
-
 
 f = open(os.path.join(os.path.dirname(__file__), 'README.txt'))
 readme = f.read()
@@ -10,13 +8,16 @@ f.close()
 
 setup(
     name='django-beta',
-    version=".".join(map(str, VERSION)),
+    version='0.1.0',
     description='django-beta is a reusable Django application for handling pre-beta signups.',
     long_description=readme,
     author='Frank Wiles',
     author_email='frank@revsys.com',
-    url='http://github.com/revsys/django-beta/tree/master',
+    url='http://github.com/revsys/django-beta',
+    download_url='http://github.com/revsys/django-beta/downloads',
     packages=find_packages(),
+    include_package_data=True,
+    license='LICENSE.txt',
     zip_safe=False,
     classifiers=[
         'Development Status :: 4 - Beta',
