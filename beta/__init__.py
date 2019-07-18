@@ -1,3 +1,3 @@
 VERSION = (0, 1, 0)
 
-import beta.listeners
+default_app_config = "beta.apps.BetaConfig"
