@@ -1,3 +1,4 @@
-include *.txt 
-include beta/templates/beta/signup.html
+include *.md
+include *.txt
 include beta/templates/beta/confirmation.html
+include beta/templates/beta/signup.html
