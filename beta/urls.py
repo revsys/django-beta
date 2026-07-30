@@ -1,16 +1,8 @@
-from django.conf.urls import *
+from django.urls import path
 
-from beta.views import Signup, Confirmation
+from beta.views import Confirmation, Signup
 
-urlpatterns = patterns('',
-    url(
-        regex = '^signup/$',
-        view = Signup.as_view(),
-        name = 'beta_signup',
-        ),
-    url(
-        regex = '^signup/confirmed/$',
-        view = Confirmation.as_view(),
-        name = 'beta_confirmation',
-        ),
-    )
+urlpatterns = [
+    path("signup/", Signup.as_view(), name="beta_signup"),
+    path("signup/confirmed/", Confirmation.as_view(), name="beta_confirmation"),
+]
