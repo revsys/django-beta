@@ -1,10 +1,9 @@
+import pytest
 from django.apps import apps
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.test import TestCase, override_settings
 from django.urls import reverse
-
-import pytest
 
 from beta.forms import BetaSignupForm
 from beta.models import BetaSignup
