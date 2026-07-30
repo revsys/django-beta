@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "django-beta"
-version = "0.1.0"
+version = "0.2.0"
 description = "django-beta is a reusable Django application for handling pre-beta signups."
 authors = [
     { name = "Frank Wiles", email = "frank@revsys.com" },
