@@ -1,5 +1,10 @@
 # django-beta
 
+[![CI](https://github.com/revsys/django-beta/actions/workflows/actions.yml/badge.svg)](https://github.com/revsys/django-beta/actions/workflows/actions.yml)
+[![PyPI](https://img.shields.io/pypi/v/django-beta.svg)](https://pypi.org/project/django-beta/)
+[![Python versions](https://img.shields.io/pypi/pyversions/django-beta.svg)](https://pypi.org/project/django-beta/)
+[![Django versions](https://img.shields.io/pypi/frameworkversions/django/django-beta.svg)](https://pypi.org/project/django-beta/)
+
 `django-beta` is a simple application to help you capture pre-beta interest
 with your sites.
 
