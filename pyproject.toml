@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "django-beta"
-version = "0.2.0"
+version = "0.2.1"
 description = "django-beta is a reusable Django application for handling pre-beta signups."
 authors = [
     { name = "Frank Wiles", email = "frank@revsys.com" },
@@ -48,7 +48,7 @@ test = ["pytest", "pytest-cov", "pytest-django"]
 testing = ["django-beta[test]"]
 
 [tool.bumpver]
-current_version = "0.2.0"
+current_version = "0.2.1"
 version_pattern = "MAJOR.MINOR.PATCH"
 commit_message = "Bump version {old_version} -> {new_version}"
 commit = true
